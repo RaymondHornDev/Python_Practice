@@ -42,3 +42,10 @@ class Tree:
             self.pre_order(node.left)
         if node.right is not None:
             self.pre_order(node.right)
+            
+    def post_order(self, node):
+        if node.left is not None:
+            self.post_order(node.left)
+        if node.right is not None:
+            self.post_order(node.right)
+        print(node.value)
