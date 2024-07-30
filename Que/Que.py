@@ -42,4 +42,20 @@ class Que:
             else:
                 self.tail.next = None
                 ret_node.prev = None
-                
+            return ret_node
+        
+def fill_que(passed_list, que):
+    for item in passed_list:
+        que._push(item)
+        
+def empty_que(que):
+    while que.has_nodes:
+        loc_node = que.pop()
+        print(loc_node.value)
+        
+loc_list = [ 1, 2, 4, 3, 6, 7, 9, 8]
+
+loc_que = Que()
+
+fill_que(loc_list, loc_que)
+empty_que(loc_que)
