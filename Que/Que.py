@@ -20,7 +20,7 @@ class Que:
         self.tail = None
         self.has_nodes = False
         
-    def _push(self, value):
+    def push(self, value):
         local_node = Node.new_node(value)
         
         if self.head == None:
@@ -32,7 +32,7 @@ class Que:
             local_node.next = self.head
             self.head = local_node
             
-    def _pop(self):
+    def pop(self):
         if self.has_nodes:
             ret_node = self.tail
             self.tail = ret_node.prev
