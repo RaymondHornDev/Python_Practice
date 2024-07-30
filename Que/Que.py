@@ -50,7 +50,7 @@ def fill_que(passed_list, que):
         
 def empty_que(que):
     while que.has_nodes:
-        loc_node = que.pop()
+        loc_node = que._pop()
         print(loc_node.value)
         
 loc_list = [ 1, 2, 4, 3, 6, 7, 9, 8]
