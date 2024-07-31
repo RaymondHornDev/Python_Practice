@@ -29,14 +29,17 @@ class List:
             else:
                 self.recursive_add(node.next, value)
         else:
+            print('Adding node')
             loc_node = Node(value)
             
             loc_node.next = node
             node.prev = loc_node
             
             if node is self.head:
+                print('Head found')
                 self.head = loc_node
             else:
+                print('Not head')
                 loc_node.prev = node.prev
                 loc_node.prev.next = loc_node
             
@@ -58,7 +61,7 @@ def fill_list(passed_list, passed_array):
 def empty_list(passed_list):
     while passed_list.has_nodes:
         node = passed_list.pop()
-        print(node.value)
+        #print(node.value)
     
 loc_list = List()
 loc_array = [1, 2, 5, 3, 7, 4, 6, 9, 8]
