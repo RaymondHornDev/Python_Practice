@@ -15,6 +15,7 @@ class List:
     def push(self, value):
         if self.head is None:
             self.head = Node(value)
+            self.has_nodes = True
         else:
             Node.recursive_add(self.head, value)
             
@@ -31,7 +32,10 @@ class List:
             loc_node = Node(value)
             
             loc_node.next = node
-            node.prev = loc_node
+            if node.prev is not None:
+                node.prev = loc_node
+                node.prev.next = loc_node
+            
             if node is Node.head:
                 Node.head = loc_node
             
