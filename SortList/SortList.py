@@ -17,7 +17,7 @@ class List:
             self.head = Node(value)
             self.has_nodes = True
         else:
-            Node.recursive_add(self.head, value)
+            List.recursive_add(self.head, value)
             
     def recursive_add(node, value):
         if node.value < value:
