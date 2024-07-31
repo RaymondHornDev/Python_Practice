@@ -26,16 +26,13 @@ class List:
             else:
                 self.recursive_add(node.next, value)
         else:
-            print('Adding bigger node')
             loc_node = Node(value)
             
             loc_node.next = node
             
             if node is self.head:
-                print('Head found')
                 self.head = loc_node
             else:
-                print('Not head')
                 loc_node.prev = node.prev
                 loc_node.prev.next = loc_node
                 
