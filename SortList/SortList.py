@@ -39,3 +39,16 @@ class List:
             if node is Node.head:
                 Node.head = loc_node
             
+    def pop(self):
+        ret_node = self.head
+        if self.head.next is not None:
+            self.head = self.head.next
+            self.head.prev = None
+            ret_node.next = None
+        else:
+            self.head = None
+            self.has_nodes = False
+        return ret_node
+    
+loc_list = List()
+loc_array = [1, 2, 5, 3, 7, 4, 6, 9, 8]
