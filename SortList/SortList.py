@@ -32,12 +32,13 @@ class List:
             loc_node = Node(value)
             
             loc_node.next = node
-            if node.prev is not None:
-                node.prev = loc_node
-                node.prev.next = loc_node
+            node.prev = loc_node
             
             if node is self.head:
                 self.head = loc_node
+            else:
+                loc_node.prev = node.prev
+                loc_node.prev.next = loc_node
             
     def pop(self):
         ret_node = self.head
