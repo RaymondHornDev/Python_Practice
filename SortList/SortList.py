@@ -36,8 +36,8 @@ class List:
                 node.prev = loc_node
                 node.prev.next = loc_node
             
-            if node is Node.head:
-                Node.head = loc_node
+            if node is List.head:
+                List.head = loc_node
             
     def pop(self):
         ret_node = self.head
