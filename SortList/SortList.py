@@ -16,16 +16,22 @@ class List:
         if self.head is None:
             self.head = Node(value)
         else:
-            pass
+            Node.recursive_add(self.head, value)
+            
     def recursive_add(node, value):
         if node.value < value:
-            loc_node = Node(value)
+            if node.next is None:
+                loc_node = Node(value)
             
-            loc_node.prev = node
-            node.next = loc_node
+                loc_node.prev = node
+                node.next = loc_node
+            else:
+                Node.recursive_add(node.next, value)
         else:
             loc_node = Node(value)
             
             loc_node.next = node
             node.prev = loc_node
+            if node is Node.head:
+                Node.head = loc_node
             
