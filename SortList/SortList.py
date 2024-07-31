@@ -61,3 +61,6 @@ def empty_list(passed_list):
     
 loc_list = List()
 loc_array = [1, 2, 5, 3, 7, 4, 6, 9, 8]
+
+fill_list(loc_list, loc_array)
+empty_list(loc_list)
