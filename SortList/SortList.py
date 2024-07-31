@@ -50,5 +50,14 @@ class List:
             self.has_nodes = False
         return ret_node
     
+def fill_list(passed_list, passed_array):
+    for item in passed_array:
+        passed_list.push(item)
+        
+def empty_list(passed_list):
+    while passed_list.has_nodes:
+        node = passed_list.pop()
+        print(node.value)
+    
 loc_list = List()
 loc_array = [1, 2, 5, 3, 7, 4, 6, 9, 8]
