@@ -27,7 +27,7 @@ class List:
                 loc_node.prev = node
                 node.next = loc_node
             else:
-                Node.recursive_add(node.next, value)
+                List.recursive_add(node.next, value)
         else:
             loc_node = Node(value)
             
