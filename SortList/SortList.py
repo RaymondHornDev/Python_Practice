@@ -17,9 +17,9 @@ class List:
             self.head = Node(value)
             self.has_nodes = True
         else:
-            List.recursive_add(self.head, value)
+            self.recursive_add(self.head, value)
             
-    def recursive_add(node, value):
+    def recursive_add(self, node, value):
         if node.value < value:
             if node.next is None:
                 loc_node = Node(value)
@@ -27,7 +27,7 @@ class List:
                 loc_node.prev = node
                 node.next = loc_node
             else:
-                List.recursive_add(node.next, value)
+                self.recursive_add(node.next, value)
         else:
             loc_node = Node(value)
             
@@ -36,8 +36,8 @@ class List:
                 node.prev = loc_node
                 node.prev.next = loc_node
             
-            if node is List.head:
-                List.head = loc_node
+            if node is self.head:
+                self.head = loc_node
             
     def pop(self):
         ret_node = self.head
