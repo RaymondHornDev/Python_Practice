@@ -1,6 +1,7 @@
 ''' Que in Python '''
 ''' Que in Python '''
 ''' Que in Python '''
+''' Que in Python '''
 
 class Node:
     def __init__(self, value) -> None:
